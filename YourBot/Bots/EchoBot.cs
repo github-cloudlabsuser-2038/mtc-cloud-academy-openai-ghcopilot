@@ -28,6 +28,9 @@ namespace EchoBot.Bots
         DeploymentName = "gpt-35-turbo",
         Messages = new ChatRequestUserMessage[] { new ChatRequestUserMessage { Role = "user", Content = text } }
     };
+    
+    var options = new ChatCompletionsOptions { DeploymentName="gpt-35-turbo", Messages = { new ChatRequestUserMessage (text ) },};"
+
     //Invocar el método GetChatCompletionsAsync y regresar la respuesta de la llamada
     var response = await client.GetChatCompletionsAsync(options);
 
