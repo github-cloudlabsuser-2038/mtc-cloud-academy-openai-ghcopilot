@@ -19,12 +19,12 @@ namespace EchoBot.Bots
     public async Task<string> GetResponseAsync(string text)
     {
     //generar un AzureKeyCredential con la llave de OpenAI
-    var credential = new AzureKeyCredential(AzureOpenAIKey);
+        var credential = new AzureKeyCredential(AzureOpenAIKey);
     //inicializar el cliente de OpenAIClient con el endpoint de OpenAI y el AzureKeyCredential
-    var client = new OpenAIClient(AzureOpenAIEndpoint, credential);
+        var client = new OpenAIClient(AzureOpenAIEndpoint, credential);
     //"Inicializar las opciones de ChatCompletionsOptions de forma inline indicando el parámetro de DeploymentName de tipo gpt-35-turbo y Messages recibido de la variable text de tipo ChatRequestUserMessage. Siguiendo el formato new Class { Property = Value }"
-    var options = new ChatCompletionsOptions
-    {
+        var options = new ChatCompletionsOptions
+    {   
         DeploymentName = "gpt-35-turbo",
         Messages = new ChatRequestUserMessage[] { new ChatRequestUserMessage { Role = "user", Content = text } }
     };
